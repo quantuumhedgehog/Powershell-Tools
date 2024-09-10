@@ -1,0 +1,15 @@
+name: Analize .ps1 script files
+run-name: script-analize-ci
+
+defaults:
+    run:
+        shell: bash
+on: push
+
+
+jobs:
+    analize:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
