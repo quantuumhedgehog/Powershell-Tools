@@ -1,0 +1,26 @@
+name: Analize .ps1 script files
+run-name: script-analize-ci
+
+on: 
+    workflow_dispatch: {}
+
+jobs:
+  analyze-powershell-scripts:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Windows with .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 6.0.300
+      - name: Install analysis tools
+        run: |
+          Install-Module PSScriptAnalyzer -Scope CurrentUser
+          Install-Module StyleCop -Scope CurrentUser
+          Install-Module Pester -Scope CurrentUser
+      - name: Analyze PowerShell scripts
+        run: |
+          Invoke-PSScriptAnalyzer ./*.ps1
+          Invoke-StyleCop ./*.ps1
+        #   Invoke-Pester -Path ./*.tests.ps1
