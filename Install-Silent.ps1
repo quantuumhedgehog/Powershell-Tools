@@ -16,4 +16,7 @@ winget import -i winget-requirements.json `
               --accept-package-agreements `
               --disable-interactivity `
               --ignore-warnings `
-              --no-upgrade
+              --ignore-unavailable `
+              --ignore-versions `
+              --no-upgrade `
+              --verbose
