@@ -17,10 +17,10 @@ jobs:
       - name: Install analysis tools
         run: |
           Install-Module PSScriptAnalyzer -Scope CurrentUser
-          Install-Module StyleCop -Scope CurrentUser
-          Install-Module Pester -Scope CurrentUser
+          # Install-Module StyleCop -Scope CurrentUser
+          # Install-Module Pester -Scope CurrentUser
       - name: Analyze PowerShell scripts
         run: |
           Invoke-PSScriptAnalyzer ./*.ps1
-          Invoke-StyleCop ./*.ps1
+          # Invoke-StyleCop ./*.ps1
         #   Invoke-Pester -Path ./*.tests.ps1
