@@ -20,3 +20,9 @@ winget import -i winget-requirements.json `
               --ignore-versions `
               --no-upgrade `
               --verbose
+# Install modules
+Install-Module posh-git -Scope CurrentUser -Force
+Install-Module posh-SSH -Scope CurrentUser -Force
+
+Import-Module posh-git
+Add-PoshGitToProfile -Force
