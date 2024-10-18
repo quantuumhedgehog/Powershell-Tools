@@ -1,0 +1,12 @@
+alias:
+  # Custom aliases
+  - name: al
+    value: aliae
+  - name: omp
+    value: oh-my-posh
+  - name: np
+    value: notepad
+    description: Open Notepad.
+  - name: ll
+    value: Get-ChildItem -Force
+    description: Alias for Get-ChildItem with Force parameter.
