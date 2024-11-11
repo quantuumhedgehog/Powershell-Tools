@@ -26,7 +26,8 @@ try {
     $updatePath = [System.IO.Path]::Combine($env:LOCALAPPDATA, "Microsoft\PowerShell\$psVersion\update*")
     # Attempt to remove the update files
     Remove-Item -Path $updatePath -Force
-} catch {
+}
+catch {
     Write-Warning "Failed to remove update files: $_"
 }
 
@@ -37,14 +38,14 @@ try {
 
 # Configure PSReadLine options
 $PSReadLineOptions = @{
-    EditMode = "Windows"
-    HistoryNoDuplicates = $true
+    EditMode                      = "Windows"
+    HistoryNoDuplicates           = $true
     HistorySearchCursorMovesToEnd = $true
-    PredictionViewStyle="ListView"
-    PredictionSource="HistoryAndPlugin"
-    Colors = @{
+    PredictionViewStyle           = "ListView"
+    PredictionSource              = "HistoryAndPlugin"
+    Colors                        = @{
         "Command" = "#8181f7"
-	"Comment"="`e[92m"
+        "Comment" = "`e[92m"
     }
 }
 Set-PSReadLineOption @PSReadLineOptions
